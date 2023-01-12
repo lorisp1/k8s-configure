@@ -13,6 +13,14 @@ while true; do
     read -p "Continue? (y)Yes/(n)No: " yn
     case $yn in
         [Yy]* )
+            minikubeProfile=$(kubectl config current-context)
+
+            printf -- "==================\n"
+            printf -- " Enabling metrics \n"
+            printf -- "==================\n"
+            printf -- "\033[2m"
+            minikube addons enable metrics-server -p $minikubeProfile
+            printf -- "\033[0m\033[32mDONE!\033[0m\n"
             printf -- "====================\n"
             printf -- " Installing Jenkins \n"
             printf -- "====================\n"

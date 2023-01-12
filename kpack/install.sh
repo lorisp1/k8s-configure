@@ -39,7 +39,7 @@ REGISTRY_PASSWORD=$password kp secret create registry-credentials \
     --registry-user $username \
     --namespace $devNamespace
 
-sed s#DEV-NAMESPACE#$devNamespace#g $CURR_DIR/dev-serviceaccount.yaml |kubectl apply -f -
+sed s/DEV-NAMESPACE/$devNamespace/g $CURR_DIR/dev-serviceaccount.yaml |kubectl apply -f -
 
 while true; do
     printf -- "\033[0mDo you wish to run a kpack smoke test? (y)Yes/(n)No: "

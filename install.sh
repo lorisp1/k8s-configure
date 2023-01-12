@@ -25,13 +25,13 @@ while true; do
             printf -- " Installing Jenkins \n"
             printf -- "====================\n"
             ./jenkins/install.sh
-            printf -- "\033[32mDONE!\033[0m\n"
+            printf -- "\033[0m\033[32mDONE!\033[0m\n"
 
             printf -- "====================\n"
             printf -- "  Installing Kpack  \n"
             printf -- "====================\n"
             ./kpack/install.sh
-            printf -- "\033[32mDONE!\033[0m\n"
+            printf -- "\033[0m\033[32mDONE!\033[0m\n"
             break;;
         [Nn]* ) break;;
         * ) printf -- "Please answer yes or no\n";;
